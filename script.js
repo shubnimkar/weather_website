@@ -5,7 +5,7 @@ async function getWeather() {
     const city = document.getElementById('city-input').value;
     if (city === '') return;
 
-    const url = `${apiUrl}?q=${city}&appid=${apiKey}&units=metric`;
+const url = `${apiUrl}?q=${city}&appid=${apiKey}&units=metric`;
 
     try {
         const response = await fetch(url);
