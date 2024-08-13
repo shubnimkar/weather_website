@@ -18,7 +18,7 @@ async function getWeather() {
         document.getElementById('city-name').textContent = data.name;
         document.getElementById('temperature').textContent = `Temperature: ${data.main.temp} °C`;
         document.getElementById('description').textContent = `Condition: ${data.weather[0].description}`;
-        document.getElementById('icon').src = `https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`;
+        #document.getElementById('icon').src = `https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`;
 
         updateBackground(data.weather[0].main);
 
