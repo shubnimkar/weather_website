@@ -9,18 +9,20 @@
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
 </head>
 <body>
-    <div class="container">
+    <div class="container d-flex align-items-center justify-content-center min-vh-100">
         <div class="weather-container card p-4 text-center">
             <h1 class="display-4">Live Weather</h1>
             <div class="weather-info">
                 <h2 id="city-name">City Name</h2>
-                <img id="icon" src="" alt="Weather Icon" class="my-3">
+                <div class="icon-container">
+                    <img id="icon" src="" alt="Weather Icon">
+                </div>
                 <p id="temperature" class="lead">Temperature: -- °C</p>
                 <p id="description">Condition: --</p>
             </div>
 
             <input type="text" id="city-input" class="form-control mb-3" placeholder="Enter city name">
-            <button onclick="getWeather()" class="btn btn-primary">Get Weather</button>
+            <button onclick="getWeather()" class="btn btn-primary mb-3">Get Weather</button>
 
             <div class="form-check form-switch mt-3">
                 <input class="form-check-input" type="checkbox" id="temp-switch" onclick="toggleTemperature()">
@@ -44,7 +46,7 @@
                 <p id="sunset">Sunset: --</p>
             </div>
 
-            <div id="map" style="height: 300px;" class="mt-4"></div>
+            <div id="map" class="map-container mt-4"></div>
 
             <div class="forecast mt-4">
                 <h2 class="h5">5-Day Forecast</h2>
