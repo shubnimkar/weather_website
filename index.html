@@ -4,26 +4,56 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Live Weather</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
 </head>
 <body>
-    <div class="weather-container">
-        <h1>Live Weather</h1>
-        <div class="weather-info">
-            <h2 id="city-name">City Name</h2>
-            <img id="icon" src="" alt="Weather Icon">
-            <p id="temperature">Temperature: -- °C</p>
-            <p id="description">Condition: --</p>
-        </div>
-        <input type="text" id="city-input" placeholder="Enter city name">
-        <button onclick="getWeather()">Get Weather</button>
+    <div class="container">
+        <div class="weather-container card p-4 text-center">
+            <h1 class="display-4">Live Weather</h1>
+            <div class="weather-info">
+                <h2 id="city-name">City Name</h2>
+                <img id="icon" src="" alt="Weather Icon" class="my-3">
+                <p id="temperature" class="lead">Temperature: -- °C</p>
+                <p id="description">Condition: --</p>
+            </div>
 
-        <div class="forecast">
-            <h2>5-Day Forecast</h2>
-            <div id="forecast-container"></div>
+            <input type="text" id="city-input" class="form-control mb-3" placeholder="Enter city name">
+            <button onclick="getWeather()" class="btn btn-primary">Get Weather</button>
+
+            <div class="form-check form-switch mt-3">
+                <input class="form-check-input" type="checkbox" id="temp-switch" onclick="toggleTemperature()">
+                <label class="form-check-label" for="temp-switch">Show in Fahrenheit</label>
+            </div>
+
+            <div class="form-check form-switch mt-2">
+                <input class="form-check-input" type="checkbox" id="dark-mode-switch" onclick="toggleDarkMode()">
+                <label class="form-check-label" for="dark-mode-switch">Dark Mode</label>
+            </div>
+
+            <div id="loading-spinner" class="spinner-border text-primary mt-3" role="status" style="display: none;">
+                <span class="sr-only">Loading...</span>
+            </div>
+
+            <div class="weather-details mt-4">
+                <p id="humidity">Humidity: --%</p>
+                <p id="wind-speed">Wind Speed: -- m/s</p>
+                <p id="pressure">Pressure: -- hPa</p>
+                <p id="sunrise">Sunrise: --</p>
+                <p id="sunset">Sunset: --</p>
+            </div>
+
+            <div id="map" style="height: 300px;" class="mt-4"></div>
+
+            <div class="forecast mt-4">
+                <h2 class="h5">5-Day Forecast</h2>
+                <div id="forecast-container" class="d-flex justify-content-around"></div>
+            </div>
         </div>
     </div>
 
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
