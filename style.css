@@ -1,29 +1,40 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Roboto', sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
     margin: 0;
+    background-size: cover;
     background-color: #f0f8ff;
+    transition: background-image 0.5s ease;
 }
 
 .weather-container {
     text-align: center;
-    background-color: #fff;
+    background-color: rgba(255, 255, 255, 0.8);
     padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    max-width: 400px;
+    width: 100%;
 }
 
 .weather-info {
     margin-bottom: 20px;
 }
 
+#icon {
+    width: 100px;
+    height: 100px;
+}
+
 #city-input {
     padding: 8px;
     width: 200px;
     margin-right: 10px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
 }
 
 button {
@@ -37,4 +48,14 @@ button {
 
 button:hover {
     background-color: #0056b3;
+}
+
+.forecast {
+    margin-top: 20px;
+}
+
+.forecast-day {
+    display: inline-block;
+    margin: 10px;
+    text-align: center;
 }
