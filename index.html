@@ -11,11 +11,17 @@
         <h1>Live Weather</h1>
         <div class="weather-info">
             <h2 id="city-name">City Name</h2>
+            <img id="icon" src="" alt="Weather Icon">
             <p id="temperature">Temperature: -- °C</p>
             <p id="description">Condition: --</p>
         </div>
         <input type="text" id="city-input" placeholder="Enter city name">
         <button onclick="getWeather()">Get Weather</button>
+
+        <div class="forecast">
+            <h2>5-Day Forecast</h2>
+            <div id="forecast-container"></div>
+        </div>
     </div>
 
     <script src="script.js"></script>
