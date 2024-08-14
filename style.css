@@ -6,8 +6,8 @@ body {
     margin: 0;
 }
 
-.container {
-    max-width: 600px;
+.container-fluid {
+    padding: 0 50px;
 }
 
 .weather-container {
@@ -15,11 +15,16 @@ body {
     padding: 20px;
     border-radius: 12px;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    max-width: 1200px;
     width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
 
 .weather-info {
-    margin-bottom: 20px;
+    max-width: 300px;
+    flex-shrink: 0;
 }
 
 .icon-container {
@@ -33,9 +38,22 @@ body {
     height: auto;
 }
 
+.weather-details {
+    max-width: 400px;
+    flex-grow: 1;
+    margin-left: 20px;
+}
+
 .weather-details p {
     margin: 0;
     padding: 5px 0;
+}
+
+.map-container {
+    height: 300px;
+    width: 100%;
+    border-radius: 8px;
+    overflow: hidden;
 }
 
 body.dark-mode {
@@ -45,13 +63,4 @@ body.dark-mode {
 
 .weather-container.dark-mode {
     background-color: #1f1f1f;
-}
-
-.map-container {
-    height: 300px;
-    width: 100%;
-    border-radius: 8px;
-    overflow: hidden;
-    margin: 0 auto;
-    max-width: 100%;
 }
