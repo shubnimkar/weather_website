@@ -9,48 +9,48 @@
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
 </head>
 <body>
-    <div class="container d-flex align-items-center justify-content-center min-vh-100">
-        <div class="weather-container card p-4 text-center">
-            <h1 class="display-4">Live Weather</h1>
-            <div class="weather-info">
+    <div class="container-fluid d-flex align-items-center justify-content-center min-vh-100">
+        <div class="weather-container card p-4 d-flex flex-row align-items-center">
+            <div class="weather-info text-center mr-4">
+                <h1 class="display-4">Live Weather</h1>
                 <h2 id="city-name">City Name</h2>
-                <div class="icon-container">
+                <div class="icon-container my-3">
                     <img id="icon" src="" alt="Weather Icon">
                 </div>
                 <p id="temperature" class="lead">Temperature: -- °C</p>
                 <p id="description">Condition: --</p>
+
+                <input type="text" id="city-input" class="form-control mb-3" placeholder="Enter city name">
+                <button onclick="getWeather()" class="btn btn-primary mb-3">Get Weather</button>
+
+                <div class="form-check form-switch mt-3">
+                    <input class="form-check-input" type="checkbox" id="temp-switch" onclick="toggleTemperature()">
+                    <label class="form-check-label" for="temp-switch">Show in Fahrenheit</label>
+                </div>
+
+                <div class="form-check form-switch mt-2">
+                    <input class="form-check-input" type="checkbox" id="dark-mode-switch" onclick="toggleDarkMode()">
+                    <label class="form-check-label" for="dark-mode-switch">Dark Mode</label>
+                </div>
+
+                <div id="loading-spinner" class="spinner-border text-primary mt-3" role="status" style="display: none;">
+                    <span class="sr-only">Loading...</span>
+                </div>
             </div>
 
-            <input type="text" id="city-input" class="form-control mb-3" placeholder="Enter city name">
-            <button onclick="getWeather()" class="btn btn-primary mb-3">Get Weather</button>
-
-            <div class="form-check form-switch mt-3">
-                <input class="form-check-input" type="checkbox" id="temp-switch" onclick="toggleTemperature()">
-                <label class="form-check-label" for="temp-switch">Show in Fahrenheit</label>
-            </div>
-
-            <div class="form-check form-switch mt-2">
-                <input class="form-check-input" type="checkbox" id="dark-mode-switch" onclick="toggleDarkMode()">
-                <label class="form-check-label" for="dark-mode-switch">Dark Mode</label>
-            </div>
-
-            <div id="loading-spinner" class="spinner-border text-primary mt-3" role="status" style="display: none;">
-                <span class="sr-only">Loading...</span>
-            </div>
-
-            <div class="weather-details mt-4">
+            <div class="weather-details text-center">
                 <p id="humidity">Humidity: --%</p>
                 <p id="wind-speed">Wind Speed: -- m/s</p>
                 <p id="pressure">Pressure: -- hPa</p>
                 <p id="sunrise">Sunrise: --</p>
                 <p id="sunset">Sunset: --</p>
-            </div>
 
-            <div id="map" class="map-container mt-4"></div>
+                <div id="map" class="map-container mt-4"></div>
 
-            <div class="forecast mt-4">
-                <h2 class="h5">5-Day Forecast</h2>
-                <div id="forecast-container" class="d-flex justify-content-around"></div>
+                <div class="forecast mt-4">
+                    <h2 class="h5">5-Day Forecast</h2>
+                    <div id="forecast-container" class="d-flex justify-content-around"></div>
+                </div>
             </div>
         </div>
     </div>
